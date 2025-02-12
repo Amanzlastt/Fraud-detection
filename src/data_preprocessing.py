@@ -3,6 +3,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+df_ip = pd.read_csv('C:\\Users\\Aman\\Desktop\\kifyaw8-9\\data\\raw\\IpAddress_to_Country.csv')
 
 class DataPreprocessing:
     def __init__(self):
@@ -25,13 +26,13 @@ class DataPreprocessing:
         plt.tight_layout()
         return plt
     
-    def assign_country_code(self,df_Fraud, df_IP):
+    def assign_country_code(self,df_Fraud):
         country_list = []  # Store results
 
         for fraud_ip in df_Fraud['ip_address']:
             # Filter the correct country based on IP range
-            match = df_IP.loc[(df_IP['lower_bound_ip_address'] <= fraud_ip) & 
-                            (df_IP['upper_bound_ip_address'] >= fraud_ip), 'country']
+            match = df_ip.loc[(df_ip['lower_bound_ip_address'] <= fraud_ip) & 
+                            (df_ip['upper_bound_ip_address'] >= fraud_ip), 'country']
 
             # Append the first matched country (if any), otherwise append None
             country_list.append(match.iloc[0] if not match.empty else None)
