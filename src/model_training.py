@@ -124,11 +124,11 @@ gbc_score = accuracy_score(y_test, y_pred_gbc)
 gbc_score
 
 # %%
-import joblib
-import pickle
-import json
+# import joblib
+# import pickle
+# import json
 
-joblib.dump(pipeline,'random_forest_calssifier.pkl')
-joblib.dump(pipeline2,'gradient_boosring_classifier.pkl')
+# joblib.dump(pipeline,'random_forest_calssifier.pkl')
+# joblib.dump(pipeline2,'gradient_boosring_classifier.pkl')
 
 
