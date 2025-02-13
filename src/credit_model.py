@@ -61,10 +61,10 @@ log_reg.score(x_test, y_test)
 dec_tre.score(x_test,y_test)
 
 # %%
-import joblib
+# import joblib
 
 
-joblib.dump(log_reg,'credit_logisticreg.pkl')
-joblib.dump(dec_tre,'credit_decisiontree.pkl')
+# joblib.dump(log_reg,'credit_logisticreg.pkl')
+# joblib.dump(dec_tre,'credit_decisiontree.pkl')
 
 
