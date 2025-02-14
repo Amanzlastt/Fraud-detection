@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraud Detection</title>
+    <link rel="stylesheet" href="static/index.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Fraud Detection Form</h2>
+        <form method="post">
+            'user_id', 'signup_time', 'purchase_time', 'purchase_value',
+       'device_id', 'source', 'browser', 'sex', 'age', 'ip_address'
+
+            <label>User_id:</label>
+            <input type="number" name="user_id" required>
+
+            <label>signup_time:</label>
+            <input type="datetime-local" name="signup_time" required>
+
+            <label>Purchase_time:</label>
+            <input type="datetime-local" name="purchase_time" required>
+
+            <label>purchase_value:</label>
+            <input type="number" name="purchase_value" required>
+
+            <label>Device_id:</label>
+            <input type="text" name="device_id" required>
+
+            <label>Souurce:</label>
+            <input type="text" name="source" required>
+
+            <label>Browser:</label>
+            <input type="text" name="browser" required>
+
+            <label>Sex:</label>
+            <input type="text" name="sex" required>
+
+            <label>Age:</label>
+            <input type="number" name="age" required>
+
+            <label>IP:</label>
+            <input type="number" name="ip_address" required>
+
+            <!-- <label>Country:</label>
+            <input type="number" name="country" required>
+
+
+            <label>Browser:</label>
+            <select name="browser">
+                <option value="Chrome">Chrome</option>
+                <option value="Firefox">Firefox</option>
+                <option value="Edge">Edge</option>
+            </select>
+
+            <label>Source:</label>
+            <select name="source">
+                <option value="App">App</option>
+                <option value="Web">Web</option>
+            </select>
+            <select name="sex">
+                <option value="Male"></option>
+                <option value="Female">Web</option>
+            </select> -->
+
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction is not none %}
+        <h3>Prediction: {{ "Fraudulent" if prediction == 1 else "Not Fraudulent" }}</h3>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -2,10 +2,11 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
+from sklearn.base import BaseEstimator, TransformerMixin
 
 df_ip = pd.read_csv('C:\\Users\\Aman\\Desktop\\kifyaw8-9\\data\\raw\\IpAddress_to_Country.csv')
 
-class DataPreprocessing:
+class DataPreprocessing(BaseEstimator,TransformerMixin):
     def __init__(self):
         pass
     def to_date(self,column_list,data):
@@ -26,7 +27,7 @@ class DataPreprocessing:
         plt.tight_layout()
         return plt
     
-    def assign_country_code(self,df_Fraud):
+    def assign_country_code(df_Fraud):
         country_list = []  # Store results
 
         for fraud_ip in df_Fraud['ip_address']:
