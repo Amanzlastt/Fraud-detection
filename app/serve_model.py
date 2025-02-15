@@ -13,11 +13,12 @@ sys.path.append(os.path.abspath(path=path))
 try:
     # from data_preprocessing import DataPreprocessing
     from feature_enginerring import FeatureEnginerring
+    # print('import done')
 except:
     print("Import failure")
 FeatureEnginerring= FeatureEnginerring.feature_enginerring
 # Load the trained model
-with open("C:\\Users\\Aman\\Desktop\\kifyaw8-9\\data\\models\\gradient_boosring_classifier.joblib", "rb") as file:
+with open("C:\\Users\\Aman\\Desktop\\kifyaw8-9\\data\\app\\gradient_boosring_classifier.joblib", "rb") as file:
     model = joblib.load(file)
 
 # features used in training
