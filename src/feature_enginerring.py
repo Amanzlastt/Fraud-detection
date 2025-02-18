@@ -31,7 +31,7 @@ class FeatureEnginerring(DataPreprocessing):
 
         # Merge frequency and velocity into one DataFrame
         user_transaction_stats = pd.merge(transaction_frequency, transaction_velocity, on='device_id', how='left')
-        user_transaction_stats['avg_transaction_velocity'].fillna(0,inplace=True)
+        user_transaction_stats['avg_transaction_velocity'] = user_transaction_stats['avg_transaction_velocity'].fillna(0)
         df['time_diff'].fillna(0, inplace=True)
 
         # Merge user_transaction_stats with the original dataset

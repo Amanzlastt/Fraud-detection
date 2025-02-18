@@ -7,14 +7,23 @@ body {
 .container {
     width: 50%;
     margin: auto;
-    background: white;
+    background: rgba(200,200,200);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px gray;
 }
-
-input, select {
+form{
+    display: flex;
+    flex-direction: column;
+}
+.input_lables{
     width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+input {
+    display: inline;
     padding: 8px;
     margin: 8px 0;
     border: 1px solid #ddd;
