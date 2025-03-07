@@ -14,12 +14,17 @@ class DataPreprocessing(BaseEstimator,TransformerMixin):
         for column_name in column_list:
             self.data[column_name] = pd.to_datetime(self.data[column_name])
         return self.data
-    def hist_plot(self,categorical_columns):
+    def hist_plot(self,categorical_columns, data = None):
+        if (data is None):
+            df= self.data
+        else:
+            df=data
+        
         fig, axes = plt.subplots(nrows=len(categorical_columns), ncols=1, figsize=(8, 4 * len(categorical_columns)))
         if len(categorical_columns) == 1:
             axes = [axes]
         for ax, col in zip(axes, categorical_columns):
-            sns.countplot(x=self.data[col], ax=ax, palette="viridis")
+            sns.countplot(x=df[col], ax=ax, palette="viridis")
             ax.set_title(f"Histogram of {col}")
             ax.set_xlabel(col)
             ax.set_ylabel("Count")
