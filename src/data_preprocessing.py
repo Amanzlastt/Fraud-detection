@@ -4,7 +4,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.base import BaseEstimator, TransformerMixin
 
-df_ip = pd.read_csv('C:\\Users\\Aman\\Desktop\\kifyaw8-9\\data\\raw\\IpAddress_to_Country.csv')
+df_ip = pd.read_csv('C:\\Users\\Aman\\Desktop\\Fraud-detection\\data\\raw\\IpAddress_to_Country.csv')
 
 class DataPreprocessing(BaseEstimator,TransformerMixin):
     def __init__(self):

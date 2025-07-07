@@ -1,40 +1,95 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
-    width: 50%;
-    margin: auto;
-    background: rgba(200,200,200);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px gray;
+  max-width: 700px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
-form{
-    display: flex;
-    flex-direction: column;
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 5px;
 }
-.input_lables{
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: baseline;
+
+.subtitle {
+  color: #777;
+  margin-bottom: 30px;
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.form-group {
+  flex: 1;
+  min-width: 140px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
 input {
-    display: inline;
-    padding: 8px;
-    margin: 8px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
 }
 
 button {
-    background: blue;
-    color: white;
-    padding: 10px;
-    border: none;
-    width: 100%;
-    cursor: pointer;
+  margin-top: 20px;
+  padding: 12px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #0056b3, #003f7f);
+}
+
+.result {
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.result.fraud {
+  background-color: #ffe4e4;
+  color: #c0392b;
+  border: 1px solid #c0392b;
+}
+
+.result.not-fraud {
+  background-color: #e0ffe4;
+  color: #27ae60;
+  border: 1px solid #27ae60;
 }

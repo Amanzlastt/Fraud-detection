@@ -4,7 +4,7 @@ from flask import Flask, jsonify
 
 app = Flask(__name__)
 
-df = pd.read_csv('C:\\Users\\Aman\\Desktop\\kifyaw8-9\\data\\raw\\Fraud_Data.csv')
+df = pd.read_csv('C:\\Users\\Aman\\Desktop\\Fraud-detection\\data\\raw\\Fraud_Data.csv')
 df['signup_time'] = pd.to_datetime(df['signup_time'], errors='coerce')
 df['signup_week'] = df['signup_time'].dt.isocalendar().week
 df['device_id'] = df['device_id'].apply(lambda x: hash(x) % 10)

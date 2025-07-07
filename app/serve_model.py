@@ -7,7 +7,7 @@ import pandas as pd
 import sys
 import os
 
-path= "C:\\Users\\Aman\\Desktop\\kifyaw8-9\\src"
+path= "C:\\Users\\Aman\\Desktop\\Fraud-detection\\src"
 sys.path.append(os.path.abspath(path=path))
 
 try:
@@ -16,9 +16,9 @@ try:
     # print('import done')
 except:
     print("Import failure")
-FeatureEnginerring= FeatureEnginerring.feature_enginerring
+# FeatureEngineering= FeatureEnginerring.feature_enginerring
 # Load the trained model
-with open("C:\\Users\\Aman\\Desktop\\kifyaw8-9\\data\\models\\gradient_boosring_classifier.joblib", "rb") as file:
+with open("C:\\Users\\Aman\\Desktop\\Fraud-detection\\data\\models\\credit_logisticreg.joblib", "rb") as file:
     model = joblib.load(file)
 
 # features used in training
@@ -57,18 +57,18 @@ def index():
 
 if __name__ == "__main__":
     app.run(debug=True)
-# @app.route("/predict", methods=["POST"])
-# def predict():
-#     try:
-#         data = request.get_json()  # Get input data in JSON format
-#         features = np.array(data["features"]).reshape(1, -1)  # Convert to numpy array
-#         prediction = model.predict(features)  # Predict
-#         return jsonify({"prediction": int(prediction[0])})  # Return JSON response
-#     except Exception as e:
-#         return jsonify({"error": str(e)}), 400
+@app.route("/predict", methods=["POST"])
+def predict():
+    try:
+        data = request.get_json()  # Get input data in JSON format
+        features = np.array(data["features"]).reshape(1, -1)  # Convert to numpy array
+        prediction = model.predict(features)  # Predict
+        return jsonify({"prediction": int(prediction[0])})  # Return JSON response
+    except Exception as e:
+        return jsonify({"error": str(e)}), 400
 
-# if __name__ == "__main__":
-#     app.run(host="0.0.0.0", port=5000, debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)
 
 
 

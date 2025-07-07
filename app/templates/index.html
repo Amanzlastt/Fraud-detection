@@ -1,54 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fraud Detection</title>
-    <link rel="stylesheet" href="static/index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fraud Detection</title>
+  <link rel="stylesheet" href="static/index.css" />
 </head>
 <body>
-    <div class="container">
-        <h2>Fraud Detection Form</h2>
-        <form method="post">
-            <label>User_id:</label>
-            <input type="number" name="user_id" required>
+  <div class="container">
+    <h1>🕵️‍♂️ Fraud Detection System</h1>
+    <p class="subtitle">Enter transaction details below to check for fraud</p>
+    
+    <form method="post">
+      <div class="form-group">
+        <label>User ID</label>
+        <input type="number" name="user_id" required />
+      </div>
 
-            <div class='input_lables'>
-                <label>signup_time:</label>
-                <input type="datetime-local" name="signup_time" required>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Signup Time</label>
+          <input type="datetime-local" name="signup_time" required />
+        </div>
+        <div class="form-group">
+          <label>Purchase Time</label>
+          <input type="datetime-local" name="purchase_time" required />
+        </div>
+      </div>
 
-                <label>Purchase_time:</label>
-                <input type="datetime-local" name="purchase_time" required>
-            </div>
-            <div>
-                <label>purchase_value:</label>
-                <input type="number" name="purchase_value" required>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Purchase Value</label>
+          <input type="number" name="purchase_value" required />
+        </div>
+        <div class="form-group">
+          <label>Device ID</label>
+          <input type="text" name="device_id" required />
+        </div>
+      </div>
 
-                <label>Device_id:</label>
-                <input type="text" name="device_id" required>
-            </div>
-            <div>
-                <label>Souurce:</label>
-                <input type="text" name="source" required>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Source</label>
+          <input type="text" name="source" required />
+        </div>
+        <div class="form-group">
+          <label>Browser</label>
+          <input type="text" name="browser" required />
+        </div>
+      </div>
 
-                <label>Browser:</label>
-                <input type="text" name="browser" required>
-            </div>
-            <div>
-                <label>Sex:</label>
-                <input type="text" name="sex" required>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Sex</label>
+          <input type="text" name="sex" required />
+        </div>
+        <div class="form-group">
+          <label>Age</label>
+          <input type="number" name="age" required />
+        </div>
+        <div class="form-group">
+          <label>IP Address</label>
+          <input type="number" name="ip_address" required />
+        </div>
+      </div>
 
-                <label>Age:</label>
-                <input type="number" name="age" required>
+      <button type="submit">🔍 Predict</button>
+    </form>
 
-                <label>IP:</label>
-                <input type="number" name="ip_address" required>
-            </div>        
-            <button type="submit">Predict</button>
-        </form>
-        {% if prediction is not none %}
-        <h3>Prediction: {{ "Fraudulent" if prediction == 1 else "Not Fraudulent" }}</h3>
-        {% endif %} 
-    </div>
+    {% if prediction is not none %}
+      <div class="result {{ 'fraud' if prediction == 1 else 'not-fraud' }}">
+        <h2>Prediction: {{ "Fraudulent 🚨" if prediction == 1 else "Not Fraudulent ✅" }}</h2>
+      </div>
+    {% endif %}
+  </div>
 </body>
 </html>

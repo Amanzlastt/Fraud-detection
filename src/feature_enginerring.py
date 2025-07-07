@@ -4,7 +4,7 @@ import pandas as pd
 import sys
 import os
 
-path= "C:\\Users\\Aman\\Desktop\\kifyaw8-9\\src"
+path= "C:\\Users\\Aman\\Desktop\\Fraud-detection\\src"
 sys.path.append(os.path.abspath(path=path))
 
 try:
